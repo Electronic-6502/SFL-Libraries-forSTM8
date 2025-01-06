@@ -1,9 +1,9 @@
 /**
- * @file : sfl_stm8_beep.c
- * @author : HS6502
- * @version : 1.0
- * @date : 2-Nov-2024   Updated : 7-Nov-2024
- * @brief : SFL STM8 Beeper Peripheral Library
+ * @file    sfl_stm8_beep.c
+ * @author  HS6502
+ * @version 1.0
+ * @date    2-Nov-2024   Updated : 7-Nov-2024
+ * @brief   SFL STM8 Beeper Peripheral Library
  */
 #include "sfl_stm8_beep.h"
 

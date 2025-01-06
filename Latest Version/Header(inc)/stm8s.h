@@ -118,27 +118,22 @@
 #define HSI_VALUE   ((uint32_t)16000000) /*!< Typical Value of the HSI in Hz */
 #define LSI_VALUE   ((uint32_t)128000)   /*!< Typical Value of the LSI in Hz */
 
+#define CONST  const
 #ifdef _COSMIC_
  #define FAR  @far
  #define NEAR @near
  #define TINY @tiny
  #define EEPROM @eeprom
- #define CONST  const
-
-#elif defined(_SDCC_)
+#elif defined(_SDCC_) || defined(_IAR_)
  #define FAR  __far
- #define NEAR // SDCC cannot handle the __near
  #define TINY __tiny
  #define EEPROM __eeprom
- #define CONST  const
-#else /*_IAR_*/
- #define FAR  __far
- #define NEAR __near
- #define TINY __tiny
- #define EEPROM __eeprom
- #define CONST  const
 #endif /* __CSMC__ */
-
+#if defined(_SDCC_)
+  #define NEAR        // SDCC Cannot Handle near
+#elif defined (_IAR_)
+  #define NEAR __near
+#endif
 /* For FLASH routines, select whether pointer will be declared as near (2 bytes,
    to handle code smaller than 64KB) or far (3 bytes, to handle code larger
    than 64K) */
@@ -199,7 +194,7 @@
 #define     __IO    volatile         /*!< defines 'read / write' permissions  */
 
 #if defined(_SDCC_)
-#include <stdint.h>
+  #include <stdint.h>
 #else
 /*!< Signed integer types  */
 typedef   signed char     int8_t;

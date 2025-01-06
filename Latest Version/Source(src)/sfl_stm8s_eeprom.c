@@ -1,8 +1,9 @@
 /**
- * @author : HS6502
- * @date : 25-Oct-2024  @date Updated : 27-Oct-2024
- * @version : 1.0
- * @brief : Library for Using STM8 Internal EEPROM
+ * @file     sfl_stm8s_eeprom.c
+ * @author   HS6502
+ * @date     25-Oct-2024  @date Updated : 27-Oct-2024
+ * @version  1.0
+ * @brief    Library for Using STM8 Internal EEPROM
  */
 #include "stm8s.h"
 #include "sfl_stm8s_eeprom.h"
@@ -31,8 +32,8 @@ uint8_t EEPROM_Read (uint16_t ByteAddress){
 
 void EEPROM_UnLock (void){
     if((FLASH->IAPSR >> 3) == 0){ // if EEPROM Locked, Unlock EEPROM
-    FLASH->DUKR = 0xAE;
-    FLASH->DUKR = 0x56;
+        FLASH->DUKR = 0xAE;
+        FLASH->DUKR = 0x56;
     }
 }
 void EEPROM_Lock (void){
