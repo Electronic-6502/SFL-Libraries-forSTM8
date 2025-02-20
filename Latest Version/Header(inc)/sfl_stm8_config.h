@@ -21,7 +21,7 @@
 #include "sfl_stm8s_i2c.h"
 #include "sfl_stm8s_uart.h"
 
-#warning this is a Legacy version, include "sfl_stm8.h" header file to your Project
+#warning this is a Legacy file, include "sfl_stm8.h" header file to your Project
 
 #endif
 /*-----End of File-----*/
